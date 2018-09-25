@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A5FFF7A215760810024F934 /* MGAlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5FFF79215760810024F934 /* MGAlertPresenter.swift */; };
 		3A6B89C1214A037A003F5323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B89C0214A037A003F5323 /* AppDelegate.swift */; };
 		3A6B89C3214A037A003F5323 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B89C2214A037A003F5323 /* ViewController.swift */; };
 		3A6B89C6214A037A003F5323 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A6B89C4214A037A003F5323 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A5FFF79215760810024F934 /* MGAlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGAlertPresenter.swift; sourceTree = "<group>"; };
 		3A6B89BD214A037A003F5323 /* MGAlertPresenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MGAlertPresenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6B89C0214A037A003F5323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A6B89C2214A037A003F5323 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				3A6B89C0214A037A003F5323 /* AppDelegate.swift */,
 				3A6B89C2214A037A003F5323 /* ViewController.swift */,
+				3A5FFF79215760810024F934 /* MGAlertPresenter.swift */,
 				3A6B89C4214A037A003F5323 /* Main.storyboard */,
 				3A6B89C7214A037B003F5323 /* Assets.xcassets */,
 				3A6B89C9214A037B003F5323 /* LaunchScreen.storyboard */,
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A6B89C3214A037A003F5323 /* ViewController.swift in Sources */,
+				3A5FFF7A215760810024F934 /* MGAlertPresenter.swift in Sources */,
 				3A6B89C1214A037A003F5323 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
