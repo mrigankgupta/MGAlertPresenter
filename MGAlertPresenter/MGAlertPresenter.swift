@@ -22,14 +22,14 @@ public struct AlertAction {
     var handler: ((String?) -> Void)?
 }
 
-protocol Alertable where Self: UIViewController {
-    func showAlert(data: AlertData, animated: Bool, completion: (() -> Void)?)
+protocol Alertable {
+    func showAlert(from: UIViewController, data: AlertData, animated: Bool, completion: (() -> Void)?)
     func dismiss()
 }
 
 extension Alertable {
 
-    func showAlert(data: AlertData, animated: Bool, completion: (() -> Void)?) {
+    func showAlert(from: UIViewController, data: AlertData, animated: Bool, completion: (() -> Void)?) {
         let alert = UIAlertController(title: data.title, message: data.message, preferredStyle: data.style)
         if let actions = data.actions {
             for action in actions {
@@ -39,10 +39,10 @@ extension Alertable {
                 alert.addAction(alertAction)
             }
         }
-        self.present(alert, animated: animated, completion: completion)
+        from.present(alert, animated: animated, completion: completion)
     }
 
-    func dismiss() {
-        self.dismiss()
+    func dismiss(from: UIViewController, animated: Bool, completion: (() -> Void)?) {
+        from.dismiss(animated: animated, completion: completion)
     }
 }
