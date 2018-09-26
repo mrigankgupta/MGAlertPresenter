@@ -9,28 +9,48 @@
 import XCTest
 @testable import MGAlertPresenter
 
+extension CounterController {
+    func replace(presenter: Alertable) {
+        self.alertPresenter = presenter
+    }
+}
+
+class DummyAlerter: Alertable {
+    var dismissWasCalled = false
+    var showAlertWasCalled = false
+    func showAlert(from: UIViewController, data: AlertData, animated: Bool,
+                   completion: (() -> Void)?) {
+        
+    }
+
+    func dismiss(from: UIViewController, animated: Bool,
+                 completion: (() -> Void)?) {
+
+    }
+}
+
 class MGAlertPresenterTests: XCTestCase {
-    
+
+    var counterController: CounterController!
+    var expectation: XCTestExpectation!
+    var dummyAlert = DummyAlerter()
+
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        counterController = storyBoard.instantiateViewController(withIdentifier: "CounterController") as? CounterController
+        let _ = counterController.view
+        counterController.replace(presenter: dummyAlert)
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        counterController = nil
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testShowAlert() {
+        counterController.showIncrementAlert(self)
+//        expectation = XCTestExpectation(description: "DummyAlertCalled")
     }
     
 }
