@@ -27,8 +27,8 @@ protocol Alertable {
     func dismiss(from: UIViewController, animated: Bool, completion: (() -> Void)?)
 }
 
-extension Alertable {
-
+class AlertPresenter: Alertable {
+    
     func showAlert(from: UIViewController, data: AlertData, animated: Bool,
                    completion: (() -> Void)?) {
         let alert = UIAlertController(title: data.title, message: data.message, preferredStyle: data.style)
@@ -47,8 +47,4 @@ extension Alertable {
                  completion: (() -> Void)?) {
         from.dismiss(animated: animated, completion: completion)
     }
-}
-
-class AlertPresenter: Alertable {
-    // Override methods for your implementation
 }

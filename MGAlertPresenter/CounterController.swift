@@ -23,12 +23,12 @@ class CounterController: UIViewController {
     }
 
     @IBAction func showIncrementAlert(_ sender: Any) {
-        let okAction = AlertAction(title: "Ok", style: .default) { (title) in
+        let okAction = AlertAction(title: Global.Alert.buttonTitles[0], style: .default) { (title) in
             self.increment()
         }
-        let cancelAction = AlertAction(title: "Cancel", style: .destructive, handler: nil)
+        let cancelAction = AlertAction(title: Global.Alert.buttonTitles[1], style: .destructive, handler: nil)
 
-        let alertData = AlertData(title: "Alert", message: "Increment", style: .alert, actions: [okAction, cancelAction])
+        let alertData = AlertData(title: Global.Alert.title, message: Global.Alert.message, style: .alert, actions: [okAction, cancelAction])
         alertPresenter.showAlert(from: self, data: alertData, animated: false, completion: nil)
     }
 
